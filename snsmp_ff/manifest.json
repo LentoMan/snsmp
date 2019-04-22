@@ -1,6 +1,7 @@
 {
 	"manifest_version": 2,
 	"name": "SNS Media Popout",
+	"permissions": ["storage"],
 	"version": "1.0",
 
 	"description": "This extension will open media in a new tab or window on social networking sites for easy saving",
@@ -14,7 +15,7 @@
 	"content_scripts": [
 		{
 			"matches": ["*://tweetdeck.twitter.com/*","*://twitter.com/*"],
-			"js": ["main.js"]
+			"js": ["options-provider.js","main.js"]
 		}
 	]
 }
