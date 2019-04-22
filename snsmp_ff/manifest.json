@@ -4,13 +4,16 @@
 	"permissions": ["storage"],
 	"version": "1.0",
 
-	"description": "This extension will open media in a new tab or window on social networking sites for easy saving",
+	"description": "Opens media in a new tab or window on some social networking sites",
+	"icons": {
+		"48": "icon-disabled.png"
+	  },	  
 	"background": {
 		"page": "background.html"
 	  },
 	"browser_action": {
 		"default_title": "SNS Media Popout",
-		"default_icon": "icon-enabled.png"
+		"default_icon": "icon-disabled.png"
 	},
 	"content_scripts": [
 		{
