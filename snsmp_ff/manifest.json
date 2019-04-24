@@ -2,9 +2,9 @@
 	"manifest_version": 2,
 	"name": "SNS Media Popout",
 	"permissions": ["storage"],
-	"version": "1.0",
+	"version": "1.1",
 
-	"description": "Opens media in a new tab or window on some social networking sites",
+	"description": "Opens media in a new tab or window on certain social networking services",
 	"icons": {
 		"48": "icon-disabled.png"
 	  },	  
