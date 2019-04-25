@@ -2,9 +2,9 @@
 	"manifest_version": 2,
 	"name": "SNS Media Popout",
 	"permissions": ["storage"],
-	"version": "1.1",
+	"version": "1.2",
 
-	"description": "This extension will open media in a new tab or window on social networking sites for easy saving, currently images on the twitter and tweetdeck websites are supported.",
+	"description": "This extension will open clicked media in a new browser tab or window on social networking sites, images on the twitter and tweetdeck are currently supported.",
 	"icons": {
 		"48": "icon-disabled.png"
 	  },	  
