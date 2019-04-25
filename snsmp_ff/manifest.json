@@ -4,7 +4,7 @@
 	"permissions": ["storage"],
 	"version": "1.2",
 
-	"description": "This extension will open clicked media in a new browser tab or window on social networking sites, images on the twitter and tweetdeck are currently supported.",
+	"description": "This extension will open clicked media on social networking sites in a new browser tab or window for easy saving, images on twitter and tweetdeck are currently supported.",
 	"icons": {
 		"48": "icon-disabled.png"
 	  },	  
