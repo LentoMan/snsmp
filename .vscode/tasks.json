@@ -4,19 +4,6 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "run-ff-web-ext-tweetdeck",
-            "type": "shell",
-            "options": {
-                "shell": {
-                    "executable": "cmd.exe",
-                    "args": ["/d", "/c"]
-                },
-               "cwd": "${workspaceRoot}/snsmp_ff",
-            },
-            "command": "web-ext",
-            "args": ["run", "--keep-profile-changes", "--firefox-profile","p:\\firefox\\Regular","--start-url","https://tweetdeck.twitter.com/"],
-        },
-        {
             "label": "run-ff-web-ext-twitter",
             "type": "shell",
             "options": {
@@ -27,7 +14,7 @@
                "cwd": "${workspaceRoot}/snsmp_ff",
             },
             "command": "web-ext",
-            "args": ["run", "--keep-profile-changes", "--firefox-profile","p:\\firefox\\Regular","--start-url","https://twitter.com/"],
+            "args": ["run", "--keep-profile-changes", "--firefox-profile","p:\\firefox\\Regular","--start-url","https://x.com/"],
         }
     ]
 

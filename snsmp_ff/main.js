@@ -14,7 +14,7 @@ Main.handleTwitterImageOnMatch = function(urlMatches) {
     let classicUrlMatch = url.match(/(http.*).(?:jpg|gif|png)/i)
     if(classicUrlMatch != null) {
       var extension = classicUrlMatch[0].replace(classicUrlMatch[1], "").replace(".","");
-      url = classicUrlMatch[1] + "?format=" + extension + "&name=4096x4096";
+      url = classicUrlMatch[1] + "?format=" + extension + "&name=orig";
     }
 
     window.open(url, "_blank")
@@ -26,19 +26,9 @@ document.addEventListener('click', function(event) {
     return;
 
   let t = event.target;
-  
-  // TweetDeck
-  
-  if(document.URL.match("(http.*)//tweetdeck.twitter.com") != null) {
-    if(t.classList.contains('js-media-image-link') && !t.parentNode.classList.contains('is-video')) {
-      Main.stopPropagation(event);
-      let urlMatches = event.target.style.backgroundImage.match(/(http.*)[\?|\:]/i)
-      Main.handleTwitterImageOnMatch(urlMatches);
-    }
-  }
 
-  // Twitter (Modern & Classic)
-  if(document.URL.match("(http.*)//twitter.com") != null) {
+  // X / Twitter (Modern & Classic)
+  if(document.URL.match("(http.*)//(twitter|x).com") != null) {
     let modernUrlMatch = t.src.match(/(http.*)[\?]format=(?:jpg|gif|png)/i)
 
     if(t.parentNode.classList.contains('js-adaptive-photo') || modernUrlMatch) {

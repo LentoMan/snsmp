@@ -7,19 +7,10 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Debug TweetDeck",
-            "postDebugTask": "run-ff-web-ext-tweetdeck",
-            "program": "${workspaceFolder}/app.js"
-
-        },
-        {
-            "type": "node",
-            "request": "launch",
-            "name": "Debug Twitter",
+            "name": "Debug X / Twitter",
             "postDebugTask": "run-ff-web-ext-twitter",
+            "runtimeExecutable": "node",
             "program": "${workspaceFolder}/app.js"
-
         }
-
     ]
 }
