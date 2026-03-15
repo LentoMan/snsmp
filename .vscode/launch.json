@@ -11,6 +11,22 @@
             "postDebugTask": "run-ff-web-ext-twitter",
             "runtimeExecutable": "node",
             "program": "${workspaceFolder}/app.js"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Debug Instagram",
+            "postDebugTask": "run-ff-web-ext-instagram",
+            "runtimeExecutable": "node",
+            "program": "${workspaceFolder}/app.js"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Debug Threads",
+            "postDebugTask": "run-ff-web-ext-threads",
+            "runtimeExecutable": "node",
+            "program": "${workspaceFolder}/app.js"
         }
     ]
 }

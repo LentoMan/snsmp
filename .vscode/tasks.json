@@ -15,7 +15,32 @@
             },
             "command": "web-ext",
             "args": ["run", "--keep-profile-changes", "--firefox-profile","p:\\firefox\\Regular","--start-url","https://x.com/"],
+        },
+        {
+            "label": "run-ff-web-ext-instagram",
+            "type": "shell",
+            "options": {
+                "shell": {
+                    "executable": "cmd.exe",
+                    "args": ["/d", "/c"]
+                },
+               "cwd": "${workspaceRoot}/snsmp_ff",
+            },
+            "command": "web-ext",
+            "args": ["run", "--keep-profile-changes", "--firefox-profile","p:\\firefox\\Regular","--start-url","https://www.instagram.com/"],
+        },
+        {
+            "label": "run-ff-web-ext-threads",
+            "type": "shell",
+            "options": {
+                "shell": {
+                    "executable": "cmd.exe",
+                    "args": ["/d", "/c"]
+                },
+               "cwd": "${workspaceRoot}/snsmp_ff",
+            },
+            "command": "web-ext",
+            "args": ["run", "--keep-profile-changes", "--firefox-profile","p:\\firefox\\Regular","--start-url","https://www.threads.com/"],
         }
     ]
-
 }

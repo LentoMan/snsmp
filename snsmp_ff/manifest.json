@@ -1,24 +1,30 @@
 {
-	"manifest_version": 2,
-	"name": "SNS Media Popout",
-	"permissions": ["storage"],
-	"version": "1.3",
-
-	"description": "This extension will open clicked media on social networking sites in a new browser tab or window for easy saving, images on X / twitter are currently supported.",
-	"icons": {
-		"48": "icon-disabled.png"
-	  },	  
-	"background": {
-		"page": "background.html"
-	  },
-	"browser_action": {
-		"default_title": "SNS Media Popout",
-		"default_icon": "icon-disabled.png"
-	},
-	"content_scripts": [
-		{
-			"matches": ["*://x.com/*","*://twitter.com/*"],
-			"js": ["options-provider.js","main.js"]
-		}
-	]
+  "manifest_version": 2,
+  "name": "SNS Media Popout",
+  "permissions": ["storage"],
+  "version": "1.4",
+  "description": "This extension will open clicked media on social networking sites in a new browser tab or window for easy saving, images on X / twitter, instagram and threads are currently supported.",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "sns-media-popout@lentoman.net"
+    }
+  },
+  "icons": {
+    "48": "icon-disabled.png"
+    },
+  "background": {
+    "page": "background.html"
+    },
+  "browser_action": {
+    "default_title": "SNS Media Popout",
+    "default_icon": "icon-disabled.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://x.com/*","*://twitter.com/*","*://www.instagram.com/*","*://www.threads.com/*"],
+      "js": ["options-provider.js","main.js"],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ]
 }
