@@ -6,7 +6,10 @@
   "description": "This extension will open clicked media on social networking sites in a new browser tab or window for easy saving, images on X / twitter, instagram and threads are currently supported.",
   "browser_specific_settings": {
     "gecko": {
-      "id": "sns-media-popout@lentoman.net"
+      "id": "{7d4cfad2-2eb3-4b7f-b3d0-4200f4e0078a}",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
     }
   },
   "icons": {
