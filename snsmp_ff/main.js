@@ -50,25 +50,42 @@ const Main = {
                           t.previousElementSibling?.querySelector('img');
 
       if (imgCandidateEl) {
-        let fullResUrl = imgCandidateEl.src;
+        const currentSrc = imgCandidateEl.src;
+        const srcset = imgCandidateEl.srcset;
 
-        if (imgCandidateEl.srcset) {
-          const entries = imgCandidateEl.srcset.split(',').map(entry => {
-            const parts = entry.trim().split(' ');
-            return {
-              url: parts[0],
-              width: parts[1] ? parseInt(parts[1].replace('w', ''), 10) : 0
-            };
-          });
+        const probe = new Image();
 
-          entries.sort((a, b) => b.width - a.width);
-          if (entries.length > 0) fullResUrl = entries[0].url;
-        }
+        probe.onload = () => {
+          let bestUrl = currentSrc;
+          const srcWidth = probe.width;
 
-        if (imgCandidateEl.naturalWidth > 150) {
+          if (srcset) {
+            const entries = srcset.split(',').map(entry => {
+              const parts = entry.trim().split(/\s+/);
+              return {
+                url: parts[0],
+                width: parts[1] ? parseInt(parts[1].replace(/[^\d]/g, ''), 10) : 0
+              };
+            }).sort((a, b) => b.width - a.width);
+
+            if (entries.length > 0 && entries[0].width > srcWidth) {
+              bestUrl = entries[0].url;
+            }
+          }
+
+          if (bestUrl && !bestUrl.includes("blank.gif")) {
+            this.stopDefaultPropagations(event);
+            window.open(bestUrl, "_blank");
+          }
+        };
+
+        probe.onerror = () => {
+          console.warn("High-res probe failed, falling back to original src.");
           this.stopDefaultPropagations(event);
-          window.open(fullResUrl, "_blank");
-        }
+          window.open(currentSrc, "_blank"); 
+        };
+
+        probe.src = currentSrc;
       }
     }, true);
 
