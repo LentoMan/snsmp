@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "SNS Media Popout",
   "permissions": ["storage"],
-  "version": "1.4",
+  "version": "1.5",
   "description": "This extension will open clicked media on social networking sites in a new browser tab or window for easy saving, images on X / twitter, instagram and threads are currently supported.",
   "browser_specific_settings": {
     "gecko": {
